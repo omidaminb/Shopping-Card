@@ -385,7 +385,6 @@ function removeProductFromBasket(productId, isShow = true) {
   const mainProductIndex = basket.findIndex((product) => {
     return product.id === productId;
   });
-  gi;
   basket.splice(mainProductIndex, 1);
   if (isShow) {
     showBasketProduct();

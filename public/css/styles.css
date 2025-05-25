@@ -705,6 +705,7 @@ a:hover {
 
 .wrapper {
   width: 100%;
+  max-width: 1280px;
 }
 
 @media (min-width: 640px) {
@@ -728,12 +729,6 @@ a:hover {
 @media (min-width: 1280px) {
   .wrapper {
     max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .wrapper {
-    max-width: 1536px;
   }
 }
 

@@ -378,6 +378,11 @@ function clearBasket() {
   showBasketProduct();
   calculateTotalPrice();
   showBasketProductCount();
+  const shopCounts = document.querySelectorAll(".shopCount");
+  shopCounts.forEach((item) => {
+    item.innerHTML = "";
+    item.classList.remove("shopCount-border");
+  });
 }
 
 // حذف یک قلم از سبد

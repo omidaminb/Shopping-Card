@@ -153,14 +153,14 @@ function showProducts() {
           </main>
           <footer class="product-footer">
             <p class="price">${product.price.toLocaleString()} ت</p>
-            <p data-id="${product.id}" class="shopCount ${
-        productCount ? "shopCount-border" : ""
-      }">${productCount ? productCount.count : ""}</p>
       <div class="btn-wrapper">
         <button class="add-to-cart" onclick="addProductToBasket(${product.id})">
         <i class=" bx bx-cart-alt"></i>
           +
         </button>
+          <p data-id="${product.id}" class="shopCount shopCount-border">${
+        productCount ? productCount.count : 0
+      }</p>
         <button class="increseBtn remove-from-cart" onclick="removeProduct(${
           product.id
         })">
@@ -380,8 +380,7 @@ function clearBasket() {
   showBasketProductCount();
   const shopCounts = document.querySelectorAll(".shopCount");
   shopCounts.forEach((item) => {
-    item.innerHTML = "";
-    item.classList.remove("shopCount-border");
+    item.innerHTML = 0;
   });
 }
 
@@ -398,17 +397,14 @@ function removeProductFromBasket(productId, isShow = true) {
   calculateTotalPrice();
   showBasketProductCount();
   const shopCount = document.querySelector(`[data-id="${productId}"]`);
-  shopCount.innerHTML = "";
-  shopCount.classList.remove("shopCount-border");
+  shopCount.innerHTML = 0;
 }
 
 const showSopCount = (id, product) => {
   const shopCount = document.querySelector(`[data-id="${id}"]`);
   if (product.count === 0) {
-    shopCount.innerHTML = "";
-    shopCount.classList.remove("shopCount-border");
+    shopCount.innerHTML = 0;
   } else {
-    shopCount.classList.add("shopCount-border");
     shopCount.innerHTML = product.count;
   }
 };
